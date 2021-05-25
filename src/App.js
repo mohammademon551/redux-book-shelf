@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Switch } from 'react-router-dom'
 import Discover from './pages/Discover'
 import FinishedBooks from './pages/FinishedBooks'
 import ReadingList from './pages/ReadingList'
@@ -9,9 +9,9 @@ function App() {
     <AuthProvider>
       <Router>
         <Switch>
-          <Route exact path="/" component={Discover} />
-          <Route path="/reading" component={ReadingList} />
-          <Route path="/finish" component={FinishedBooks} />
+          <PrivateRoute exact path="/" component={Discover} />
+          <PrivateRoute path="/reading" component={ReadingList} />
+          <PrivateRoute path="/finish" component={FinishedBooks} />
         </Switch>
       </Router>
     </AuthProvider>
